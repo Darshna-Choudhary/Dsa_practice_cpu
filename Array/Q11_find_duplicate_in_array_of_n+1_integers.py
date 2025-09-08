@@ -2,14 +2,19 @@
 # Output: 2
 
 def findDuplicate(nums):
-    dct = {}
-    for i in range(len(nums)):
-        if nums[i] not in dct:
-            dct[nums[i]] = 1
-        else:
-            dct[nums[i]] += 1
-    for k, v in dct.items():
-        if v != 1:
-            return k
+    slow = nums[0]
+    fast = nums[0]
+    while True:
+        slow = nums[slow]
+        fast = nums[nums[fast]]
+        if slow == fast:
+            break
+
+    slow = nums[0]
+    while slow != fast:
+        slow = nums[slow]
+        fast = nums[fast]
+
+    return slow
 
 print(findDuplicate(nums))
