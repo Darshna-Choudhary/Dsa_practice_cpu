@@ -2,18 +2,15 @@
 # Output: [[-1, 1]]
 
 def getPairs(arr):
-    dct = {}
-    pairs = set()
+    num_track = ()
+    pairs = ()
     for i in arr:
-        dct[i] = dct.get(i, 0)+1
-        
-    for i in arr:
-        if -i in dct:
-            if i == 0 and dct[i] < 2:
-                continue
+        if -i in num_track:
             pair = tuple(sorted((i, -i)))
             pairs.add(pair)
-    ans = sorted([list(p) for p in pairs])
+        num_track.add(i)
+    ans = [list(pair) for pair in pairs]
+    ans.sort()
     return ans
 
 print(getPairs(arr))
