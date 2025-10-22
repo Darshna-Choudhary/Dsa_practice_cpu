@@ -4,6 +4,7 @@
 def nextPermutation(nums):
     n = len(nums)
     i = n-2
+    # pivot elmnt condition = it is first non decreasing elmnt
     while i >= 0 and nums[i] >= nums[i+1]:
         i -= 1
         
