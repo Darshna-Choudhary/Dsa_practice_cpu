@@ -1,19 +1,20 @@
 # Input: s = "abc"
 # Output: [[], ['c'], ['b'], ['b', 'c'], ['a'], ['a', 'c'], ['a', 'b'], ['a', 'b', 'c']]
 
-def getPermute(s):
-    n = len(s)
-    ans = []
-    for i in range(2 ** n):
-        bn = bin(i)[2:]
+def getSubSeq(s, i):
+    j = 0
+    sub = ""
+    while i > 0:
+        if i & 1:
+          sub += s[j]
+        j += 1
+        i = i >> 1
+    return sub
 
-        if (n-len(bn)) >= 0:
-            bn = '0' * (n-len(bn)) + bn
-            temp = []
-            for k in range(n):
-                if bn[k] == '1':
-                    temp.append(s[k])
-            ans.append(temp)
+def createSub(s):
+    ans = []
+    for i in range(1, (1 << len(s))):
+        ans.append(getSubSeq(s, i))
     return ans
 
-print(getPermute(s))
+print(createSub(s))
