@@ -1,5 +1,5 @@
 # Input: s = "abc"
-# Output: [[], ['c'], ['b'], ['b', 'c'], ['a'], ['a', 'c'], ['a', 'b'], ['a', 'b', 'c']]
+# Output: ['a', 'b', 'ab', 'c', 'ac', 'bc', 'abc']
 
 def getSubSeq(s, i):
     j = 0
