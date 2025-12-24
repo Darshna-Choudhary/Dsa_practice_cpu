@@ -1,5 +1,5 @@
-# Input: arr = [1, 4, 45, 6, 10, 8]
-# Output: target = 13
+# Input: arr = [1, 4, 45, 6, 10, 8], target = 13
+# Output: True
 
 def hasTripletSum(arr, target):
   n = len(arr)
