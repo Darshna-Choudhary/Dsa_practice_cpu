@@ -8,7 +8,7 @@
 
 def medianOf2(a, b):
   n = len(a)
-  low, high = 0, n
+  low, high = 0, n-1
   while low <= high:
     mid1 = (low + high) // 2
     mid2 = n - mid1
