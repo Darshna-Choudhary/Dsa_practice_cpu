@@ -2,23 +2,18 @@
 # Output: true
 
 def isBalanced(s):
+    dct = {"[" : "]", "{" : "}", "(" : ")"}
     stk = []
-    dct = {')' : '(', ']' : '[', '}' :'{'}
-    for ch in s:
-        if ch in dct.values():
-            stk.append(ch)
-        elif ch in dct.keys():
+    for i in s:
+        if i in dct.keys():
+            stk.append(i)
+        else:
             if not stk:
                 return False
-                
-            if stk[-1] == dct[ch]:
+            if dct[stk[-1]] == i:
                 stk.pop()
             else:
                 return False
-        
-    if not stk:
-        return True
-    else:
-        return False
+    return not stk
 
 print(isBalanced(s))
