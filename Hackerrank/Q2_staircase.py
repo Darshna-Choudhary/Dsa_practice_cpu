@@ -4,3 +4,11 @@ def staircase(n):
         print(s1, end = "")
         s = "#" * (i+1)
         print(s)
+
+n = 4
+staircase(n)
+# Output:
+#       #
+#      ##
+#     ###
+#    ####
